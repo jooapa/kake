@@ -9,7 +9,7 @@ setup(
     install_requires=[],  # Add your dependencies here
     entry_points={
         'console_scripts': [
-            'kake=kake:main_function',  # Replace with your main function
+            'kake=kake:main_function',
         ],
     },
 )

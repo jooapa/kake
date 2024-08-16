@@ -1,6 +1,6 @@
 # __init__.py
 
 """docstring for __init__.py"""
-from .kake import main_function
+from src.kake import Project
 
-__all__ = ['main_function']
+__all__ = ['Project']
