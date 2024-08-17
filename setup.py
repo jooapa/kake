@@ -4,12 +4,14 @@ from setuptools import setup, find_packages
 setup(
     name='kake',
     version='0.1',
-    packages=find_packages(where='src'),
+    packages=find_packages(where='src'),  # Ensure your packages are correctly identified
     package_dir={'': 'src'},
-    install_requires=[],  # Add your dependencies here
+    install_requires=[
+        # Add your dependencies here, e.g., 'requests', 'numpy'
+    ],
     entry_points={
         'console_scripts': [
-            'kake=kake:main_function',
+            'kake=kake:main_function',  # Ensure main_function is correctly defined in kake module
         ],
     },
 )

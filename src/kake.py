@@ -5,15 +5,7 @@ import os
 
 def main_function():
     """Main function of the project."""
-
-    # check the current directory for kakefile.py
-    # if not found, then check the parent directory
-
-    # check_args()
-
-
-# def check_args():
-#     """Check the arguments of the project."""
+    print("Hello from kake")
 
 class Project:
     """Project class for the project."""
