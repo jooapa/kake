@@ -2,24 +2,37 @@
 import sys
 import os
 
+
 def main_function():
     """Main function of the project."""
 
-    check_args()
+    # check the current directory for kakefile.py
+    # if not found, then check the parent directory
+
+    # check_args()
 
 
-def check_args():
-    """Check the arguments of the project."""
+# def check_args():
+#     """Check the arguments of the project."""
 
 class Project:
     """Project class for the project."""
 
-    def __init__(self, name):
+    def __init__(
+        self,
+        name,
+        include=[],
+        lib=[],
+        src=[],
+        flags=[],
+        build_dir="build"
+    ):
         self.name = name
-        self.include = []
-        self.lib = []
-        self.src = []
-        self.flags = []
+        self.include = include
+        self.lib = lib
+        self.src = src
+        self.flags = flags
+        self.build_dir = build_dir
 
     def get_name(self):
         """Get the name of the project."""
@@ -47,4 +60,24 @@ class Project:
 
     def build(self):
         """Build the project."""
-        print("Building the project.")
+
+        print(f"Building '{self.name}' {os.getcwd()}")
+
+        include_list = [f"-I{inc}" for inc in self.include]
+        include = " ".join(include_list) + " "
+
+        lib_list = [f"-l{lib}" for lib in self.lib]
+        lib = " ".join(lib_list) + " "
+
+        src = " ".join(self.src) + " "
+
+        flags = " ".join(self.flags) + " "
+
+        command = f"g++ -o {self.build_dir}/{self.name} {include} {lib} {src} {flags}"
+
+        # print(f"{command}")
+
+        if os.system(command) == 0:
+            print("Build successful")
+        else:
+            print("Build failed")
