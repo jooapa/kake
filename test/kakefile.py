@@ -1,8 +1,8 @@
 """Kakefile for the test suite."""
-import sys
-import os
+# import sys
+# import os
 
-from src.kake import Project
+from kake import Project
 
 project = Project("kake_test")
 

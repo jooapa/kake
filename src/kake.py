@@ -69,7 +69,9 @@ class Project:
 
         # print(f"{command}")
 
-        if os.system(command) == 0:
+        cm = os.system(command)
+
+        if cm == 0:
             print("Build successful")
         else:
             print("Build failed")
