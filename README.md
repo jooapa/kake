@@ -12,7 +12,7 @@ Kake is a simple build system for C/C++ projects. It is designed to be better th
 ## Usage
 
 1. Create a `kakefile.py` in the root of your project
-2. Run `kake` in the root of your project
+2. Run `python kakefile.py`
 3. Profit
 
 ## Docs
